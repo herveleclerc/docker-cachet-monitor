@@ -54,6 +54,8 @@ Example of configuration :
 
 Other arguments available :
 
+```
   -c="/etc/cachet-monitor.config.json": Config path
   -log="": Log path
   -name="": System Name
+```
