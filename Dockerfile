@@ -1,5 +1,7 @@
 FROM golang:1.6
-MAINTAINER herve.leclerc@alterway.fr
+
+MAINTAINER <herve leclerc> herve.leclerc@alterway.fr
+
 RUN mkdir /app \
     && git clone https://github.com/CastawayLabs/cachet-monitor.git
 
@@ -10,4 +12,5 @@ RUN go get -v github.com/castawaylabs/cachet-monitor \
     && cp example.config.json /app/.
 
 CMD ["-c", "/app/example.config.json"]
+
 ENTRYPOINT ["/app/cachet-monitor"]
