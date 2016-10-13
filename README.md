@@ -3,7 +3,7 @@
 Usage :
 
 ```bash
-docker run -tid -v /path/to/config:/etc herveleclerc/cachet-monitor 
+docker run -tid -v /path/to/config:/etc herveleclerc/cachet-monitor  -c /etc/cachet-monitor.config.json
 ```
 
 in /path/to/config create a file ```cachet-monitor.config.json```
@@ -59,3 +59,18 @@ Other arguments available :
   -log="": Log path
   -name="": System Name
 ```
+
+An example of ```docker-compose file```
+
+```yaml
+version: "2"
+services:
+  cachet-monitor-portal:
+    image: herveleclerc/docker-cachet-monitor
+    container_name: cachet-monitor-portal
+    restart: always
+    volumes:
+      - /etc/docker/compose/cachet-monitor:/etc
+    command: -c /etc/cachet-monitor.config.json
+```
+
