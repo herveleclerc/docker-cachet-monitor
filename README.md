@@ -10,7 +10,7 @@ in /path/to/config create a file ```cachet-monitor.config.json```
 
 Example of configuration :
 
-```json
+```
 {
   // URL for the API. Note: Must end with /api/v1
   "api_url": "https://<cachet domain>/api/v1",
